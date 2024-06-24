@@ -186,6 +186,8 @@ class RelationHelper
      */
     public static function getModelRelations(Model $model): array
     {
+        static::$relations = [];
+        
         foreach (get_class_methods($model) as $method) {
             if (! method_exists(Model::class, $method)) {
                 $reflection = new ReflectionMethod($model, $method);
