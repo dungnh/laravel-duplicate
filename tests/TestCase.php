@@ -71,7 +71,7 @@ abstract class TestCase extends Orchestra
     /**
      * @param Post|null $model
      */
-    protected function makeModels(Post $model = null)
+    protected function makeModels(?Post $model = null)
     {
         $model = $model && $model instanceof Post ? $model : new Post;
 
