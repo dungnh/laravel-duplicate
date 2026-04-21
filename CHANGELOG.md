@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-duplicate` will be documented in this file
 
+## 4.0.0 - 2026/21/04
+
+- Support Laravel 13.x
+- Update test tooling for PHPUnit 11 compatibility
+
 ## 3.0.0 - 2020/10/06
 
 - Support Laravel 7.x

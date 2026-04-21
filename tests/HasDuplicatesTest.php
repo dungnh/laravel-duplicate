@@ -2,6 +2,7 @@
 
 namespace Neurony\Duplicate\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use Neurony\Duplicate\Options\DuplicateOptions;
 use Neurony\Duplicate\Tests\Models\Comment;
 use Neurony\Duplicate\Tests\Models\Post;
@@ -10,7 +11,7 @@ use Neurony\Duplicate\Tests\Models\Tag;
 
 class HasDuplicatesTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_duplicates_a_model_instance()
     {
         $this->makeModels();
@@ -24,7 +25,7 @@ class HasDuplicatesTest extends TestCase
         $this->assertEquals(2, Post::count());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_save_unique_columns_when_duplicating_a_model_instance()
     {
         $model = new class extends Post {
@@ -43,7 +44,7 @@ class HasDuplicatesTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
     public function it_can_exclude_columns_when_duplicating_a_model_instance()
     {
         $model = new class extends Post {
@@ -65,7 +66,7 @@ class HasDuplicatesTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
     public function it_can_duplicate_one_to_one_relations_when_duplicating_a_model_instance()
     {
         $this->makeModels();
@@ -79,7 +80,7 @@ class HasDuplicatesTest extends TestCase
         $this->assertEquals(2, Review::count());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_duplicate_one_to_many_relations_when_duplicating_a_model_instance()
     {
         $this->makeModels();
@@ -95,7 +96,7 @@ class HasDuplicatesTest extends TestCase
         $this->assertEquals(6, Comment::count());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_duplicate_many_to_many_relations_when_duplicating_a_model_instance()
     {
         $this->makeModels();
@@ -112,7 +113,7 @@ class HasDuplicatesTest extends TestCase
         $this->assertEquals(3, Tag::count());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_save_unique_columns_when_duplicating_a_relation_of_the_model_instance()
     {
         $model = new class extends Post {
@@ -142,7 +143,7 @@ class HasDuplicatesTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
     public function it_can_exclude_columns_when_duplicating_a_relation_of_the_model_instance()
     {
         $model = new class extends Post {
@@ -170,7 +171,7 @@ class HasDuplicatesTest extends TestCase
         }
     }
 
-    /** @test */
+    #[Test]
     public function it_can_duplicate_only_the_targeted_model_instance_without_any_relations()
     {
         $model = new class extends Post {
